@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/taskdetail.css' %}">
+    <title>Task Detail</title>
+</head>
+<body>
+<div class="view">
+    <h1 class="one">Tasks</h1>
+    <h1>{{tasks}}</h1>
+    <h3>{{tasks.discription}} </h3>
+    <h5>{{tasks.created}}</h5>
+    <h5>{{tasks.completed}}</h5>
+    <input type="button" onclick="window.location.href='{% url 'task' %}';" value="Go Back" />
+</div>
+
+
+</body>
+</html>

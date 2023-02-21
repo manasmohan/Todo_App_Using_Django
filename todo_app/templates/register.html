@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registerstyle.css' %}">
+
+    <title>Register</title>
+</head>
+<body>
+
+
+    <form method='POST' class="reg">
+        {% csrf_token %}
+
+
+        <h1>Register</h1>
+        <div class="fom">{{form.as_p}}</div>
+
+
+         <button type="submit" class="btn">Login</button>
+
+         <p class="myp">Already have an account... <a href="{% url 'login' %}">Login</a></p>
+
+    </form>
+
+
+</body>
+</html>

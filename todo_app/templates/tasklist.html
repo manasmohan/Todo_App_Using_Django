@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/tasklist.css' %}">
+    <title>Task-List</title>
+</head>
+<body>
+
+<div class="container">
+    {% if request.user.is_authenticated %}
+    <p>{{ request.user}}</p>
+
+
+    {% else %}
+    {% endif %}
+    <input class="lot" type="button" onclick="window.location.href='{% url 'login' %}';" value="Logout" />
+    <h1>My Todo List</h1>
+
+    <input type="button" onclick="window.location.href='{% url 'task-create' %}';" value="Add Task" />
+
+
+
+<table class="head">
+
+    {% for tasks in task %}
+    <tr>
+        <td class="title">
+            <div class="tab">
+            <h3>{{tasks.title}}</h3>
+            <div class="but">
+                <input type="button" onclick="window.location.href='{% url 'task-detail' tasks.id %}';" value="view" />
+                <input type="button" onclick="window.location.href='{% url 'task-update' tasks.id %}';" value="Edit" />
+                <input type="button" onclick="window.location.href='{% url 'task-delete' tasks.id %}';" value="Delete" />
+
+            </div>
+            </div>
+
+
+        </td>
+
+    </tr>
+    {% endfor %}
+
+
+
+
+
+
+
+</table>
+
+</div>
+
+</body>
+</html>
