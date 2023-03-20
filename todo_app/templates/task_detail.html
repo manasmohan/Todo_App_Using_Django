@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="{% static 'css/taskdetail.css' %}">
     <title>Task Detail</title>
 </head>
-<body>
+<body id="bg" style="background-image: url('{% static '/image/todo1.jpg' %}');">
+<div class="one">
+    <h1>Tasks</h1>
+</div>
 <div class="view">
-    <h1 class="one">Tasks</h1>
+
     <h1>{{tasks}}</h1>
     <h3>{{tasks.discription}} </h3>
     <h5>{{tasks.created}}</h5>

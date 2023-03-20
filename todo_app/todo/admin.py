@@ -1,11 +1,9 @@
 from django.contrib import admin
-from .views import Tasks, Register, Login
+from .views import Tasks
 
 
 # Register your models here.
 
 admin.site.register(Tasks)
-admin.site.register(Register)
-admin.site.register(Login)
 
 

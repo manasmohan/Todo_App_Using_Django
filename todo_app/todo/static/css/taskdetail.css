@@ -7,16 +7,42 @@ font-family: verdana;
 .one{
     width: 400px;
     height: 50px;
-    background-color: antiquewhite;
-    box-shadow: 0px 5px 8px 3px #aaa;
+    margin-left: 550px;
+    margin-top: 70px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .5);
+    border-radius:20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .view{
     width: 400px;
     height: 400px;
-    margin-left: 500px;
-    margin-top: 100px;
+    margin-left: 550px;
+    margin-top: 20px;
+    padding-top: 50px;
     text-align: center;
-    background-color: antiquewhite;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .5);
+    border-radius:20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
+#bg{
+background-repeat: no-repeat;
+background-size: 1800px 900px;
+background-position: top;
+background-attachment: fixed;
+}
+
+button{
+border-radius: 10px;
+
+
+background-color: rgba(59, 203, 179, 0.549);
+}

@@ -1,22 +1,44 @@
 {% load static %}
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawsome.com/2d7d86bc6d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/tasklist.css' %}">
+
     <title>Task-List</title>
 </head>
-<body>
+<body id="bg" style="background-image: url('{% static '/image/todo1.jpg' %}');">
+
+<header>
+
+
+     {% if request.user.is_authenticated %}
+             <h4> Welcome {{ request.user}}</h4>
+
+    <input class="ref" type="button" onclick="window.location.href='{% url 'task' %}';" value="Refresh" />
+        <button  type="submit"> <a href="/">SignOut</a></button>
+
+
+
+
+</header>
+
+
 
 <div class="container">
-    {% if request.user.is_authenticated %}
-    <p>{{ request.user}}</p>
+
 
 
     {% else %}
     {% endif %}
-    <input class="lot" type="button" onclick="window.location.href='{% url 'login' %}';" value="Logout" />
+
     <h1>My Todo List</h1>
+
 
     <input type="button" onclick="window.location.href='{% url 'task-create' %}';" value="Add Task" />
 
@@ -27,6 +49,7 @@
     {% for tasks in task %}
     <tr>
         <td class="title">
+
             <div class="tab">
             <h3>{{tasks.title}}</h3>
             <div class="but">
